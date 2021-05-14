@@ -1,2 +1,2 @@
 # bare-metal
-![alt text](https://github.com/pakosep/bare-metal/temper.png)
+![alt text](https://github.com/pakosep/bare-metal/blob/main/temper.png)
