@@ -1,3 +1,4 @@
+#https://webdeasy.de/en/git-ssh-key-en/
 CROSS_COMPILE = arm-none-eabi-
 CC = $(CROSS_COMPILE)gcc
 OBJCOPY = $(CROSS_COMPILE)objcopy
