@@ -9,4 +9,5 @@ git commit -a -m 'ok'
 git push -u origin main
 #git add [file]
 #git rm -f [file]
-wk -v FS="[\n]" 'NR==FNR{rows[$1]++;next}(substr($NF,1,length($NF)-1) in rows)' wzorce ip_23122021.tx
+awk -v FS="[\n]" 'NR==FNR{rows[$1]++;next}(substr($NF,1,length($NF)-1) in rows)' wzorce ip_23122021.txt
+curl -s http://192.168.0.10/FF000000BD82BB7B0000010200000295/data.html | awk -F"[><]"  ' BEGIN{ORS=","; OFS=""; timstp=strftime("%F %T"); print timstp } {gsub(/[mAkWhVAHzvar° ]|&#8451;/,""); for(i=1; i<14; i++) print $(9+i*12) } END {gsub (/,$/,""); print "\n"}' |sed s/^,// |sed s/,$// >> volta.dat
