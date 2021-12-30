@@ -9,3 +9,4 @@ git commit -a -m 'ok'
 git push -u origin main
 #git add [file]
 #git rm -f [file]
+wk -v FS="[\n]" 'NR==FNR{rows[$1]++;next}(substr($NF,1,length($NF)-1) in rows)' wzorce ip_23122021.tx
