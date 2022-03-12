@@ -1,6 +1,6 @@
 https://webdeasy.de/en/git-ssh-key-en/
 #! /bin/sh
-#git pull # update data
+#git pull # update data in git
 #cp ../../cpp/temper.png .
 #cp ../../cpp/temper.csv .
 cp /home/pi/data/volta.dat .
