@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dygraphs Sample</title>
+    <link rel="stylesheet" href="dygraph.css" />
+    <link rel="stylesheet" type="text/css" href="styles.css">
+        <style type="text/css">
+    #div_g .dygraph-legend {
+        width: 120px;
+        background-color: transparent !important;
+        left: 1100px !important;
+        top: 1px !important;
+        font-size: 15px !important;
+    }
+     </style>
+   </head>
+  <body onload="odlicz();">
+		
+    <header>
+      <h3>Dygraphs and InfluxDB</h3>
+    </header>
+    <div id="div_g" style="width:1100px; height:800px;"></div>
+		<div id="demo">a</div>
+
+  </body>
+  <script src="jquery.min.js"></script>
+  <script src="dygraph.min.js"></script>
+  <script type="text/javascript" src="script.js?v=1"></script>
+</html>
