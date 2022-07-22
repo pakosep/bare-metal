@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../dist/dygraph.css">
+    <title>Label styles</title>
+    <script type="text/javascript" src="../dist/dygraph.js"></script>
+
+    <script type="text/javascript" src="data.js"></script>
+    <style type="text/css">
+      /*
+      NOTE: dygraphs does set some properties on the built-in legend, e.g.
+      background-color and left. If you wish to override these, you can add
+      "!important" to your CSS styles, as below.
+
+      The full list of styles for which this is necessary are listed in
+      plugins/legend.js. They are:
+      o position
+      o font-size
+      o z-index
+      o width
+      o top
+      o left
+      o background
+      o line-height
+      o text-align
+      o overflow
+      */
+      #div_g1 .dygraph-legend {
+        width: 120px;
+        background-color: transparent !important;
+        left: 1000px !important;
+        top: 1px !important;
+        font-size: 15px !important;
+      }
+      #div_g2 .dygraph-legend {
+        width: 120px;
+        background-color: transparent !important;
+        left: 1000px !important;
+        top: 1px !important;
+        font-size: 15px !important;
+      }
+    </style>
+  </head>
+  <body>
+    <p> Wykres1:</p>
+   <div id="div_g1" style="width:1000px; height:400px; "></div>
+<p>Legenda: 
+<input type=checkbox id=0 onClick="stockchange(this)" >
+<label for="0"> P1</label>
+<input type=checkbox id=1 onClick="stockchange(this)" >
+<label for="1"> P2</label>
+<input type=checkbox id=2 onClick="stockchange(this)" >
+<label for="2"> P3</label>
+<input type=checkbox id=4 onClick="stockchange(this)" >
+<label for="4"> I1</label>
+<input type=checkbox id=5 onClick="stockchange(this)" >
+<label for="5"> I2</label>
+<input type=checkbox id=6 onClick="stockchange(this)" >
+<label for="6"> I3</label>
+
+<input type=checkbox id=7 onClick="stockchange(this)" >
+<label for="7"> f</label>
+<input type=checkbox id=8 onClick="stockchange(this)" >
+<label for="8"> u1</label>
+<input type=checkbox id=9 onClick="stockchange(this)" checked>
+<label for="9"> u2</label>
+<input type=checkbox id=10 onClick="stockchange(this)" >
+<label for="10"> u3</label>
+</p>
+
+     <p> Wykres2:</p>
+   <div id="div_g2" style="width:1000px; height:300px; "></div>
+  <script type="text/javascript">
+      g1 = new Dygraph( document.getElementById("div_g1"),
+	      "watta.csv", {
+              rollPeriod: 10,
+              showRoller: true,
+//            errorBars: true,
+              labelsSeparateLines: true,
+//            showRangeSelector: true,
+//             0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+//		     		 P1,P2,P3,T ,I1,I2,I3,fq,V1,V2,V3,12,Q1,Q2,Q3,k1,S1,S2,S3,k2,f1,f2,f3,k3,E
+	visibility: [0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,1 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ],
+/*	  highlightSeriesOpts: {
+          strokeWidth: 2, // grubosc lini
+//          strokeBorderWidth: 1,
+          highlightCircleSize: 1,
+        },*/
+              axes: { y: {  axisLabelWidth: 35  }  }
+
+		});
+
+function stockchange(el) {
+            g1.setVisibility(el.id, el.checked);
+        }
+//    setStatus();
+      g2 = new Dygraph( document.getElementById("div_g2"),
+	      "watta.csv", {
+              rollPeriod: 10,
+              showRoller: true,
+              labelsSeparateLines: true,
+//            showRangeSelector: true,
+//           P1,P2,P3,T ,I1,I2,I3,fq,V1,V2,V3,12,Q1,Q2,Q3,k1,S1,S2,S3,k2,f1,f2,f3,k3,E
+visibility: [0 ,1 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ],
+//visibility: [1 ,1 ,1 ,1 ,1 ,1 ,1 ,1 ,1 ,1 ,1 ,1 ,1 ,1 ,1 ,1 ,1 ,1 ,1 ,1 ,1 ,1 ,1 ,1 ,1 ],
+             axes: { y: {  axisLabelWidth: 35  }  }
+		});
+    </script>
+
+  </body>
+</html>
